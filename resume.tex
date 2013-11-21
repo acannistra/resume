@@ -1,0 +1,208 @@
+\documentclass[margin,line]{res}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{mathcomp}
+\usepackage{enumitem}
+
+\usepackage{graphics}
+\pagecolor{white}
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\textwidth=6.3in
+\itemsep=0in
+\parsep=0in
+\headheight=-0.65in
+\footskip=-1in
+\textheight=10.5in
+% if using pdflatex:
+\setlength{\pdfpagewidth}{\paperwidth}
+\setlength{\pdfpageheight}{\paperheight} 
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$-$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+
+\begin{document}
+
+\name{Anthony F. Cannistra \vspace*{.02in}}
+\begin{resume}
+\section{\sc Contact Information}
+\vspace{.05in}
+\begin{tabular}{@{}p{2in}p{4in}}
+Anthony F. Cannistra & {\it Voice:}  (401) 793-0916 \\            
+10 Glen Ellen Drive & {\it E-mail:}  \href{mailto:anthony.cannistra@tufts.edu}{\nolinkurl{anthony.cannistra@tufts.edu}}\\         
+Cumberland, RI 02864-5034 & {\it WWW:} \url{http://www.anthonycannistra.com}
+\end{tabular}
+\section{\sc Education}
+{\bf Tufts University} Medford, Massachusetts USA\\
+\vspace*{-.1in}
+\begin{list1}
+\item[] B.A. , Computer Science and Biology (expected graduation date: May 2015)
+\item[] GPA: 3.53 (Dean's List all four semesters)
+ %{\bf Selected Courses}
+%\begin{list2}
+%\item  COMP11: Introduction to Computer Science \hfill Fall 2011
+%\item COMP15: Data Structures \hfill Spring 2012
+%\item MATH12: Calculus II \hfill Fall 2011
+%\item MATH22: Discrete Mathematics \hfill Spring 2012
+%\item BIO14: Organisms and Populations with Laboratory \hfill Spring 2012
+%\end{list2}
+\end{list1}
+{\bf Moses Brown School} Providence, Rhode Island USA \\
+\vspace*{-.1in}
+
+\begin{list1}
+\item [] GPA: 3.67
+\end{list1}
+\section{\sc Work and Research Experience}
+{\bf Tufts University Computational Biology Research Group \hfill May 2013--Present}\\
+\vspace*{-.15in}
+\begin{list1}
+\item [] {\em Researcher}
+\item [] { \begin{itemize}[topsep=0pt,itemsep=-1pt]
+            \item Worked with Professors Benjamin Hescott and Lenore Cowen on protein function prediction.
+            \item Developed and implemented algorithms in Python that built upon Hescott and Cowen's Diffusion State Distance (DSD) metric to incorporate genetic protein-protein interaction data into function prediction.
+            \item Worked with large protein interaction datasets and graph algorithms.
+            \item Wrote scientific paper describing results for submission to RECOMB 2014.
+        \end{itemize}}
+\end{list1}
+{\bf Tufts University Department of Computer Science \hfill Fall 2012--Present}\\
+\vspace*{-.15in}
+\begin{list1}
+%\item [] Medford, Massachusetts
+\item [] {\em Teaching Assistant: Problem Solving by Computer, F2013}
+\item [] {\em Teaching Assistant: Machine Structure and Assembly Language Programming, S2013}
+\item [] {\em Teaching Assistant: Introduction to Computer Science, F2012}
+\item [] {\begin{list2}
+\item Held office hours and assisted head TAs in the teaching of laboratory classes. 
+\item Graded programming projects and homework.
+\end{list2}}
+\end{list1}
+{\bf The Laboratory of Benjamin Raphael at Brown University \hfill Summer 2012}\\
+\vspace*{-.15in}
+\begin{list1}
+\item [] Providence, Rhode Island
+\item [] {\em Computational Biology Research Assistant}
+\item [] {\begin{list2}
+\item Involved in algorithm design: efficient and accurate detection of genomic structural variants.
+\item Tested, improved, and redesigned existing algorithms with efficiency in mind. 
+\item {\em Code available at} \href{http://gasv.googlecode.com}{\nolinkurl{http://gasv.googlecode.com}}
+\end{list2}}
+\end{list1}
+
+
+\section{\sc Leadership Positions}
+\textbf{Association for Computing Machinery, Tufts Chapter \hfill Spring 2013--Present}\\
+\emph{Executive Board Member}\\
+\textbf{Tufts Idea Exchange \hfill Spring 2013--Present}\\
+\emph{Executive Board Member}\\
+{\bf Tufts University Leonard Carmichael Society} \hfill {\bf Fall 2011--Fall 2012}\\
+{\em Directional Staff Member: Transportation Coordinator} 
+
+% \begin{list2}
+% \item Managed two minivans for the use of over 50 community service groups.
+% \item Created and customized an online van reservation system: \url{http://lcsvan.youcanbook.me}.
+% \item Facilitated the purchase of a new minivan in the Spring of 2012.
+% \end{list2}
+%
+%{\bf Moses Brown School Debate Team} \hfill {\bf September 2010--May 2011}\\
+%{\em Co-Captain}
+%\begin{list2}
+%\item Offered guidance to novice debaters to improve their skills.
+%\item Managed teams of debaters for tournaments and ensured successful relationships between team members.
+%\end{list2}
+
+\section{\sc Computing Experience}
+{\bf Software:} Adobe Photoshop, Microsoft Office Suite, Apple Software Suite, Apple XCode \\
+{\bf Operating Systems:} Unix/Linux, Mac OSX, Microsoft Windows (XP, Vista, 7) \\
+{\bf Programming Languages:} C, C++, Python, \verb+bash+, Scheme, JavaScript,  HTML, CSS, and \LaTeX \\
+{\bf Recently Completed Projects:} { (see more here: \href{http://www.anthonycannistra.com/portfolios.html}{\nolinkurl{http://www.anthonycannistra.com}}}) 
+\begin{list1}
+\item []
+\begin{list2}
+\item \texttt{http://tuftstext.com}, a textbook price comparison tool for Tufts students
+
+\item A Virtual Machine written in the C programming language.
+\item An image compression/decompression software suite, written in the C programming language.
+%\item Efficient Song Lyric Search Engine. Optimized for large databases (N $\approx$ 4,000,000). 
+\item Personal website. Designed and Built using responsive CSS templates.
+%\item Discrete Event Simulator: Model of Supermarket. Analyzed various checkout configurations.
+%\item Modular, Object-Based Language Analyzer and Unknown Language Identifier. 
+\end{list2}
+\end{list1}
+\section{\sc Honors and Awards}
+
+Admission to PennApps Hackathon at the University Of Pennsylvania, 2013
+\vspace*{-.15in}
+
+Intuit Sustainability Prize -- MIT/Harvard ID Hack, 2013
+\vspace*{-.15in}
+
+
+College Board Advanced Placement Distinguished Scholar Award, 2011 
+\vspace*{-.15in}
+
+Admission to the National Cum Laude Society, 2011 
+\vspace*{-.15in}
+
+Rhode Island Forensic League: Best Varsity Debater, 2011
+
+
+
+
+
+%
+%{\bf  Brown University \& Memorial Hospital of Rhode Island \hfill Summer--Winter 2011}\\
+%\vspace*{-.15in}
+%\begin{list1}
+%%\item [] Pawtucket, Rhode Island
+%\item [] {\em Lung Age COPD Study Research Assistant}
+%\item [] {\begin{list2}
+%\item Recruited and interviewed patients over the telephone while delivering study information.
+%\item Required to understand and follow United States HIPAA law.
+%\end{list2}}
+%\end{list1}
+
+
+
+% \section{\sc Coursework}
+% Animal Behavior, Computational Biology, Data Structures, Machine Structure/Assembly Language Programming, Discrete Mathmatics
+
+
+\section{\sc Volunteer Service}
+{\bf Cyclist and Fundraiser}, {\em National Multiple Sclerosis Society, Rhode Island Chapter}
+\begin{list2}
+\item Raised over \$8000 total in the June 2010, 2011, and 2012 150-Mile cycling tours.
+\end{list2}
+
+%\section{\sc Relevant Coursework}
+%{\bf Computer Science Curriculum:}
+%\begin{list2}
+%\item COMP11: Introduction to Computer Science \hfill [Fall 2011]
+%\item COMP15: Data Structures \hfill [Spring 2012]
+%\item COMP40: Machine Structure and Assembly-Language Programming \hfill [Fall 2012]
+%\item COMP105: Programming Languages \hfill [{\em In Progress}, Spring 2013]
+%\item COMP167: Computational Biology \hfill [{\em In Progress}, Spring 2013]
+%\end{list2}
+%{\bf Biology Curriculum:}
+%\begin{list2}
+%\item BIO14L: Organisms and Populations with Lab \hfill [Spring 2012]
+%\item BIO115: General Physiology I \hfill [Fall 2012]
+%\item BIO105: Molecular Biology \hfill [{\em In Progress}, Spring 2013]
+%\end{list2}
+
+\end{resume}
+\end{document}
+
+
+
+
