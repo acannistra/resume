@@ -1,0 +1,45 @@
+\documentclass[10pt, letter]{article}
+\usepackage{hyperref}
+
+
+\usepackage[margin=2.4cm,bottom=.9cm]{geometry}
+\renewcommand{\labelitemii}{$\star$}
+
+\usepackage{enumitem}
+% \setlist{nolistsep}
+\title{\vspace{-80pt}\bfseries Anthony F. Cannistra\vspace{-10pt}}
+\author{Anthony.Cannistra@tufts.edu~~~~~~(401) 793-0916}
+\date{\vspace{-6pt}\small{
+\textbf{School:} 74 Bromfield Road, Apt 1, Somerville, MA 02144\\
+\textbf{Permanent:} 10 Glen Ellen Drive, Cumberland, RI 02864
+\vspace{-20pt}
+}
+}
+\usepackage{array, xcolor}
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.18\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$-$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}

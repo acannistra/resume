@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  22 MAR 2014 18:43
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  22 MAR 2014 22:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -50,7 +50,7 @@ Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -62,7 +62,7 @@ Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
 Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
 Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
 Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
@@ -131,10 +131,17 @@ LaTeX Info: Redefining \pageref on input line 5775.
 \c@Hfootnote=\count94
 )
 
-Package hyperref Message: Driver (autodetected): hpdftex.
+Package hyperref Message: Driver (default): hdvips.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2011/04/17 v6.82g Hyperref driver for pdfTeX
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hdvips.def
+File: hdvips.def 2011/04/17 v6.82g Hyperref driver for dvips
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pdfmark.def
+File: pdfmark.def 2011/04/17 v6.82g Hyperref definitions for pdfmark specials
+\pdf@docset=\toks15
+\pdf@box=\box26
+\pdf@toks=\toks16
+\pdf@defaulttoks=\toks17
 \Fld@listcount=\count95
 \c@bookmark@seq@number=\count96
 
@@ -144,7 +151,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
-)
+))
 (/usr/local/texlive/2011/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count97
@@ -158,11 +165,11 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutheight=\dimen111
 \Gm@layouthoffset=\dimen112
 \Gm@layoutvoffset=\dimen113
-\Gm@dimlist=\toks15
+\Gm@dimlist=\toks18
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2009/05/18 v2.2 Customized lists
-\enit@toks=\toks16
+\enit@toks=\toks19
 \labelindent=\skip44
 \enit@outerparindent=\dimen114
 \enitdp@desc=\count100
@@ -171,7 +178,7 @@ Package: enumitem 2009/05/18 v2.2 Customized lists
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen115
 \extrarowheight=\dimen116
-\NC@list=\toks17
+\NC@list=\toks20
 \extratabsurround=\skip45
 \backup@length=\skip46
 )
@@ -181,14 +188,12 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: dvips.def on input line 225.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count101
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -218,7 +223,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
-\AtBeginShipoutBox=\box26
+\AtBeginShipoutBox=\box27
 Package hyperref Info: Link coloring OFF on input line 43.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -227,7 +232,7 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count102
+\c@section@level=\count101
 )
 LaTeX Info: Redefining \ref on input line 43.
 LaTeX Info: Redefining \pageref on input line 43.
@@ -238,10 +243,13 @@ LaTeX Info: Redefining \nameref on input line 43.
 \openout3 = `resume_bullets.out'.
 
 
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -272,20 +280,6 @@ LaTeX Info: Redefining \nameref on input line 43.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen117
-\scratchbox=\box27
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen118
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks19
-)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -326,39 +320,22 @@ Overfull \hbox (14.94351pt too wide) in paragraph at lines 160--166
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
 [1
 
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
-
-(./resume_bullets.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
+ (./resume_bullets.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 168.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
 Package rerunfilecheck Info: File `resume_bullets.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 5752 strings out of 493633
- 83681 string characters out of 3143378
- 182597 words of memory out of 3000000
- 9039 multiletter control sequences out of 15000+200000
+ 5339 strings out of 493634
+ 78301 string characters out of 3143401
+ 179083 words of memory out of 3000000
+ 8635 multiletter control sequences out of 15000+200000
  9325 words of font info for 33 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  29i,11n,35p,308b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></
-usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
-r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
-/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/te
-xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
-ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on resume_bullets.pdf (1 page, 140107 bytes).
-PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+Output written on resume_bullets.dvi (1 page, 9024 bytes).
