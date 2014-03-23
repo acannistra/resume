@@ -15,7 +15,7 @@ academic:
 
 
 industry: 
-	cat $(PREAMBLE_tex) $(EDUCATION.tex) $(INDUSTRY_tex) $(POSTAMBLE_tex) >> industry_final.tex
+	cat $(PREAMBLE_tex) $(EDUCATION_tex) $(INDUSTRY_tex) $(POSTAMBLE_tex) >> industry_final.tex
 	pdflatex industry_final.tex
 
 
