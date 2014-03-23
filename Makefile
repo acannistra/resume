@@ -6,19 +6,19 @@ ACADEMIC_tex  = academic.tex
 INDUSTRY_tex  = industry.tex
 POSTAMBLE_tex = postamble.tex
 
-all: academic industry 
+all: academic industry clean
 
 
 academic: 
-	cat $(PREAMBLE_tex) $(EDUCATION_tex) $(ACADEMIC_tex) $(POSTAMBLE_tex) >> academic_final.tex
+	cat $(PREAMBLE_tex) $(EDUCATION_tex) $(ACADEMIC_tex) $(POSTAMBLE_tex) > academic_final.tex
 	pdflatex academic_final.tex
 
 
 industry: 
-	cat $(PREAMBLE_tex) $(EDUCATION_tex) $(INDUSTRY_tex) $(POSTAMBLE_tex) >> industry_final.tex
+	cat $(PREAMBLE_tex) $(EDUCATION_tex) $(INDUSTRY_tex) $(POSTAMBLE_tex) > industry_final.tex
 	pdflatex industry_final.tex
 
 
-	
-
-
+clean:
+	rm *_final.tex
+	latexmk -CA
