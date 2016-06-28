@@ -1,17 +1,19 @@
 \documentclass[10pt, letter]{article}
 \usepackage{hyperref}
 
-
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{xparse}
 \usepackage[margin=2.4cm,bottom=.9cm]{geometry}
 \renewcommand{\labelitemii}{$\star$}
 
 \usepackage{enumitem}
+\usepackage{graphicx}
 % \setlist{nolistsep}
 \title{\vspace{-80pt}\bfseries Anthony F. Cannistra\vspace{-10pt}}
 \author{Tony.Cannistra@gmail.com~~~~~~(401) 793-0916}
 \date{\vspace{-6pt}\small{
-\textbf{School:} 74 Bromfield Road, Apt 1, Somerville, MA 02144\\
-\textbf{Permanent:} 10 Glen Ellen Drive, Cumberland, RI 02864
+\textbf{Address:} 100 Puppy Smith Street, Aspen, CO 81611 USA
 \vspace{-20pt}
 }
 }
@@ -37,6 +39,46 @@
       \setlength{\leftmargin}{0.2in}}}{\end{list}}
 
 
+\makeatletter
+
+\ExplSyntaxOn
+\cs_new:Npn \white_text:n #1
+  {
+    \fp_set:Nn \l_tmpa_fp {.01}
+    \fp_mul:Nn \l_tmpa_fp {#1}
+    \llap{\textcolor{white}{\the\SOUL@syllable}\hspace{\fp_to_decimal:N \l_tmpa_fp em}}
+    \llap{\textcolor{white}{\the\SOUL@syllable}\hspace{-\fp_to_decimal:N \l_tmpa_fp em}}
+  }
+\NewDocumentCommand{\whiten}{ m }
+    {
+      \int_step_function:nnnN {1}{1}{#1} \white_text:n
+    }
+\ExplSyntaxOff
+
+\NewDocumentCommand{ \varul }{ D<>{5} O{0.2ex} O{0.1ex} +m } {%
+\begingroup
+\setul{#2}{#3}%
+\def\SOUL@uleverysyllable{%
+   \setbox0=\hbox{\the\SOUL@syllable}%
+   \ifdim\dp0>\z@
+      \SOUL@ulunderline{\phantom{\the\SOUL@syllable}}%
+      \whiten{#1}%
+      \llap{%
+        \the\SOUL@syllable
+        \SOUL@setkern\SOUL@charkern
+      }%
+   \else
+       \SOUL@ulunderline{%
+         \the\SOUL@syllable
+         \SOUL@setkern\SOUL@charkern
+       }%
+   \fi}%
+    \ul{#4}%
+\endgroup
+}
+
+\makeatother
+
 % \hyphenpenalty=10000
 % \exhyphenpenalty=10000
 
@@ -45,25 +87,32 @@
 \thispagestyle{empty}
 
 \section*{Education}
+
+\begin{tabular}{L!{\VRule}R}
+\textbf{University of Washington} \\ Seattle, WA &
+\vspace{-16.7pt}
+\begin{description}
+\item [Degree] Ph.D. candidate, Biology (\emph{beginning September 2016})
+\item [Focus] Application of machine learning techniques to ecological data in an effort to inform resource preservation and conservation efforts. Advised by Dr.~Lauren Buckley.
+\end{description} \\
+
+\end{tabular}
 \begin{tabular}{L!{\VRule}R}
 \textbf{Tufts University} \\ Medford, MA &
 \vspace{-16.7pt}
 \begin{description}
-\item[Major] B.S., Computer Science and Biology (expected May 2015)
-\item[GPA] 3.51/4.0 (Dean's List)
-% \item[Coursework] Machine Structure and Assembly Language Programming, Data Structures, Programming Languages, Computational Biology, Animal Behavior, Algorithms, Genetics, Computation Theory, Evolutionary Biology, Neuroscience, Concurrent Programming, Machine Learning, Conflict Resolution and Negotation
-\item[Passions] Exploring The Great Outdoors (hiking, climbing, ecological conservation), understanding others by understanding their stories, collaborative and consensus-driven decision making, critically examining higher education and it's greater purpose, the power and failures of the scientific method, supporting the spread and accessibility of great ideas, and reading powerful writing.
-\item[Activities] Tufts Mountain Club, Tufts Admissions Tour Guide, Tufts~Computer Science~Exchange, Tufts Idea Exchange
-\item[Leadership] Co-President, Tufts Idea Exchange; Co-Project Lead, TuftsLife; Executive Board Member, Tufts Computer Science Exchange	
+\item[Degree] B.S., Computer Science and Biology, Cum Laude. (2011-2015)
+\item[GPA] 3.53/4.0 (Dean's List)
+\item[Coursework] Machine Structure and Assembly Language Programming, Data Structures, Programming Languages, Computational Biology, Algorithms, Genetics, Computation Theory, Evolutionary Biology, Neuroscience, Concurrent Programming, Machine Learning, Conflict Resolution and Negotation, Distributed Systems
+\item[Leadership] Organizer, TEDxTufts; Co-President, Tufts Idea Exchange; Co-Project Lead, TuftsLife; Executive Board Member, Tufts Computer Science Exchange; Lodge Caretaker, Tufts Mountain Club; Tour Guide, Tufts Admissions
 \end{description} \\
-% \textbf{Moses Brown School} \\ Providence, RI &
-% Graduated May, 2011. GPA 3.67
-% \begin{description}
-% % \item[Activities] Varsity Debate, Varsity Sailing, Model United Nations, Acapella, Theater
-% \item[Honors] Admission to Cum Laude Society, Best Varsity Debater Award, Advisor's Award, College Board Advanced Placement Distinguished Scholar
-% \end{description}
+
+
 \end{tabular}
 
+
+
+% \item[Recognition] Poster Presentation at 2014 New England Undergraduate Computing Symposium, Intuit Sustainability Prize at Harvard University's International Development ``Hackathon'', Admission to PennApps Hackathon 2013 and 2014.
 \vspace{-15pt}
 \section*{Experience \textnormal{\small (read more at \url{http://www.anthonycannistra.com})}}
 % {\bf Tufts Idea Exchange}, {\em Co-President}, Spring 2014\\
@@ -74,6 +123,14 @@
 %   \item Managed event logistics such as venue reservation and audio-visual concerns.
 % \end{itemize}
 % \vspace{6pt}
+{\bf Aspen Center for Environmental Studies}, {\em Interpretive Naturalist}, June 2015--Present\\
+\vspace*{-.15in}
+\begin{itemize}[topsep=0pt,itemsep=-1pt]
+  \item Led daily guided tours around the Aspen, Colorado area. Independently researched and developed content and delivery strategies engineered to foster a deep respect and curiosity for place in a diverse group of participants. 
+  \item Greeted guests, answered phones, and conducted on-site Naturalist duties at the Hallam Lake Nature Center in Aspen. Trained to become a Great Horned Owl handler.
+  \item Taught weekly 3-hour morning environmental education classes to 4-6 year old students.
+\end{itemize}
+\vspace{6pt}
 {\bf Tufts University Computational Biology Research Group}, {\em Researcher}, May 2013--Present\\
 \vspace*{-.15in} 
 \begin{itemize}[topsep=0pt,itemsep=-1pt]
@@ -83,38 +140,37 @@
 \end{itemize}
 \vspace{6pt}
 %/////%/////%/////%/////%/////
-{\bf Tufts Idea Exchange}, {\em Co-President}, Spring 2014\\
-\vspace*{-.15in}
-\begin{itemize}[topsep=0pt, itemsep=1pt]
-  \item Read applications, interviewed, and chose seven Tufts University undergraduates to share their ideas at our April TED-style forum, together with the TEX team and my co-President.
-  \item Managed teams of speaker coaches who helped shape our speakers' ideas into a presentation.
-  \item Filled one of Tufts' largest auditoriums for the event on April 9th, 2014, attracting hundreds of students and faculty alike to share in ideas together. 
-\end{itemize}
-\vspace{6pt}
-%/////%/////%/////%/////%/////
-{\bf TuftsLife}, \emph{Project Lead}, Spring 2014--Present\\
-\vspace*{-.15in}
-\begin{itemize}[topsep=0pt, itemsep=-1pt]
-\item Gathered developers, designers, and concerned students to improve widely used University-centric event-sharing and classifieds site TuftsLife.com.
-\item Ensured that myriad groups across campus---students and administration alike---have their individual needs understood and satisfied.
-\item Began implementation for planned release in Fall 2014.
-\end{itemize}
-\vspace{6pt}
-%/////%/////%/////%/////%/////
-{\bf CollegiateText}, {\em Co-Founder and Developer}, Spring 2013--Spring 2014\\
-\vspace*{-.15in}
-\begin{itemize}[topsep=0pt,itemsep=-1pt]
-            \item Built textbook price comparison web site for students at Tufts University (\url{http://tuftstext.com}), Brandeis University, and Bentley University.
-            \item Saw over 9,000 pageviews in our first week and totaled over \$50,000 in referral sales in our first semester.
-        \end{itemize}
-\vspace{6pt}
-%/////%/////%/////%/////%/////
 {\bf Tufts University Department of Computer Science}, {\em Teaching Assistant}, Fall 2012--Present\\
 \vspace*{-.15in}
 \begin{itemize}[topsep=0pt,itemsep=-1pt]
-  \item 4 Semesters: Data Structures, Problem Solving by Computer, Machine Structure and Assembly Language Programming, Introduction to Computer Science.
+  \item 5 Semesters: Programming Languages, Data Structures, Problem Solving by Computer, Machine Structure and Assembly Language Programming, Introduction to Computer Science.
   \item Held office hours, labs, and graded programming assignments.
 \end{itemize}
+\vspace{6pt}
+%/////%/////%/////%/////%/////
+{\bf TEDxTufts}, {\em Organizer}, Spring 2014--Present\\
+\vspace*{-.15in}
+\begin{itemize}[topsep=0pt, itemsep=1pt]
+  \item Along with a core team of 9 others: researched, applied for, and acquired a University event license from TED Conferences to host our own independently-organized TEDxTufts event. Selected team of 35 students from over 100 applications. Recruited and mentored undergraduates, alumni, graduate students, postdoctoral scholars, faculty, and staff to present.
+  \item Built statically-generated web presence for the event, at \url{http://www.tedxtufts.com}.
+\end{itemize}
+%/////%/////%/////%/////%/////
+% {\bf TuftsLife}, \emph{Project Lead}, Spring 2014--Present\\
+% \vspace*{-.15in}
+% \begin{itemize}[topsep=0pt, itemsep=-1pt]
+% \item Gathered developers, designers, and concerned students to improve widely used University-centric event-sharing and classifieds site TuftsLife.com.
+% \item Ensured that myriad groups across campus---students and administration alike---have their individual needs understood and satisfied.
+% \item Began implementation for planned release in Fall 2014.
+% \end{itemize}
+% \vspace{6pt}
+% %/////%/////%/////%/////%/////
+% {\bf CollegiateText}, {\em Co-Founder and Developer}, Spring 2013--Spring 2014\\
+% \vspace*{-.15in}
+% \begin{itemize}[topsep=0pt,itemsep=-1pt]
+%             \item Built textbook price comparison web site for students at Tufts University (\url{http://tuftstext.com}), Brandeis University, and Bentley University.
+%             \item Saw over 9,000 pageviews in our first week and totaled over \$50,000 in referral sales in our first semester.
+%         \end{itemize}
+
 % \begin{list1}
 % %\item [] Medford, Massachusetts
 % \item [] {\em Teaching Assistant: Data Structures, S2014}
@@ -126,12 +182,11 @@
 %     \item Graded programming projects and homework.
 % \end{itemize}}
 %\end{list1}
-% {\bf The Laboratory of Benjamin Raphael at Brown University}, \emph{Research Assistant}, Summer 2012\\
+% {\bf Brown University Center for Computational Molecular Biology}, \emph{Research Assistant}, Summer 2012\\
 % \vspace*{-.15in}
 % \begin{itemize}[topsep=0pt,itemsep=-1pt]
-% \item Involved in algorithm design: efficient and accurate detection of genomic structural variants.
-% \item Tested, improved, and redesigned existing algorithms with efficiency in mind. 
-% \item {\em Code available at} \href{http://gasv.googlecode.com}{\nolinkurl{http://gasv.googlecode.com}}
+% \item Worked with Professor Benjamin Raphael and postdoctoral fellow Dr. Suzanne Sindi at the Brown Center for Computational Molecular Biology.
+% \item Improved runtime, space efficiency, and usability of the GASVPro pipeline, a probabilistic toolkit for genomic structural variant analysis.
 % \end{itemize}
 
    
@@ -169,27 +224,32 @@
 %         \\
     
 
-%     % \textbf{Computational Biology Resarch Assistant} \\ Brown University \\ Summer~2012 (10~weeks) &
-%     %     \vspace{-9pt}
-%     %     \begin{itemize}[topsep=0pt,itemsep=-1pt]
-%     %         \item Worked with Professor Benjamin Raphael and postdoctoral fellow Dr. Suzanne Sindi at the Brown Center for Computational Molecular Biology.
-%     %         \item Improved runtime, space efficiency, and usability of the GASVPro pipeline, a suite of software for probabilistically finding structural variants in DNA.
-%     %         \item Implemented the ability to use uniqueness data (i.e. Rosetta uniqueness track) to supplement the variant calling algorithm. 
-%     %     \end{itemize}
-%     %     \vspace{6pt}
-%     %     \\
+% \textbf{Computational Biology Resarch Assistant} \\ Brown University \\ Summer~2012 (10~weeks) &
+%     \vspace{-9pt}
+%     \begin{itemize}[topsep=0pt,itemsep=-1pt]
+%         \item Worked with Professor Benjamin Raphael and postdoctoral fellow Dr. Suzanne Sindi at the Brown Center for Computational Molecular Biology.
+%         \item Improved runtime, space efficiency, and usability of the GASVPro pipeline, a suite of software for probabilistically finding structural variants in DNA.
+%         \item Implemented the ability to use uniqueness data (i.e. Rosetta uniqueness track) to supplement the variant calling algorithm. 
+%     \end{itemize}
+%     \vspace{6pt}
+
    
 % \end{tabular}
-\vspace{6pt}
 
-
-\vspace{-15pt}
-\section*{Skills}
-\begin{tabular}{L!{\VRule}R}
-
-\textbf{Languages} & C, \CC, Python, Standard ML, Scheme, HTML, CSS, JavaScript \vspace{6pt}  \\
-\textbf{Tools} \vspace{6pt} & \LaTeX, Git, GitHub, GDB, Node.js, OS X, Windows, Unix/Linux, Adobe Creative Suite \\
+\subsection*{Passions}
+\begin{tabular}{m{14cm}m{2.79cm}}
+The Great Outdoors (hiking, climbing, ecological conservation, environmental education), \varul{public speaking}, understanding others by understanding their stories, collaborative and consensus-driven \varul{decision making}, critically examining higher \underline{education} and it's greater purpose, the power and failures of the scientific method, thinking about how people use \varul{technology}, supporting the spread and accessibility of great ideas, and reading powerful writing.
+& \includegraphics[height=3.0cm]{cig_logo.png}
 \end{tabular}
+\vspace{-15pt}
+% \section*{Skills}
+% \begin{tabular}{L!{\VRule}R}
+
+% \textbf{Languages} & C, \CC, Python, Erlang, Standard ML, Scheme, HTML, CSS, JavaScript \vspace{6pt}  \\
+% \textbf{Tools} \vspace{6pt} & \LaTeX, Git GitHub, Node.js, OS X, Windows, Unix/Linux, AWS S3 and EC2. \\
+% \end{tabular}
+% \section*{Passions}
+% The Great Outdoors (hiking, climbing, ecological conservation), understanding others by understanding their stories, collaborative and consensus-driven decision making, critically examining higher education and it's greater purpose, the power and failures of the scientific method, thinking about how people use technology, supporting the spread and accessibility of great ideas, and reading powerful writing.
 \null
 \vfill
 %\emph{to view recently-completed projects and other ways to connect, visit} \url{http://anthonycannistra.com}
